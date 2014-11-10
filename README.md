@@ -6,4 +6,20 @@ After cloning you just have to run:
 
     npm install
   
-I'm using bower for installing angular, if it asks anything, use the version you want.
+I'm using bower for installing angular, if it asks anything, select the version you want.
+
+## Bootstrap Material
+
+I'm also using a [bootstrap material theme](http://fezvrasta.github.io/bootstrap-material-design/), if you want to see it in action, uncomment the following:
+
+    //- templates/views/ang_bootm/app.jade Lines 13 to 14
+    script(type='text/javascript').
+      $(function() {$.material.init();});
+      
+    //- templates/layouts/ang_bootm.jade Lines 24 to 25
+    link(href="/js/lib/bootstrap-material-design/dist/css/material-wfont.min.css", rel="stylesheet")
+    link(href="/js/lib/bootstrap-material-design/dist/css/ripples.min.css", rel="stylesheet")
+    
+    //- templates/layouts/ang_bootm.jade Lines 63 to 64
+    script(src="/js/lib/bootstrap-material-design/dist/js/ripples.min.js")
+    script(src="/js/lib/bootstrap-material-design/dist/js/material.min.js")
