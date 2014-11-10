@@ -1,0 +1,12 @@
+doctype html
+div(ng-controller="PostCtrl as postctrl" layout="vertical" layout-fill)
+  md-content
+    a(href="" ng-click="go('/blog')") &larr; Back to the blog
+    h2 {{postctrl.post.title}}
+    h3 Posted on {{postctrl.post.publishedDate | date:'longDate'}} in
+      span(ng-repeat="category in postctrl.post.categories") 
+        a(href="" ng-click="go('/blog/' + category.key)") {{category.name}}
+        | {{$last ? ' ' : ', '}}
+      | by {{postctrl.post.author.name.first}}
+    img(ng-src="{{postctrl.post.image.url}}" class="art-img")
+    div(ng-bind-html="postctrl.post.content.extended")

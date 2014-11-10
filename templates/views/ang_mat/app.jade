@@ -1,0 +1,26 @@
+extends ../../layouts/ang_mat
+
+block css
+  link(href="/styles/angular/list.css", rel="stylesheet")
+
+block js
+  script(src='/js/ang_mat/services.js')
+  script(src='/js/ang_mat/blog/blog.js')
+  script(src='/js/ang_mat/post/post.js')
+  script(src='/js/ang_mat/gallery/gallery.js')
+  script(src='/js/ang_mat/contact/contact.js')
+  script(src='/js/ang_mat/main.js')
+
+block app
+  div(ng-controller="MainCtrl as main" md-theme="green" layout="vertical" layout-fill)
+    md-toolbar(class="app-toolbar")
+      div(class="md-toolbar-tools")
+        a(href="/") &larr; Go back to Keystone
+        //- span(flex)
+        md-tabs(selected="selectedIndex")
+          md-tab(ng-repeat="tab in tabs" on-select="onTabSelected(tab)" on-deselect="announceDeselected(tab)" ng-disabled="tab.disabled" label="{{tab.title}}" ng-click="go(tab, '/' + tab.path)")
+          md-tabs
+    md-content
+      div(layout="vertical" layout-fill ng-view)
+
+    

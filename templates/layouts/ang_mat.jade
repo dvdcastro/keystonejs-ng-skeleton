@@ -1,0 +1,49 @@
+include ../mixins/flash-messages
+
+doctype html
+html(ng-app="mainApp" class="no-js")
+
+  //- HTML HEADER
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+    title= title || 'Anuncia Tu Denuncia'
+    link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+
+    //- Customise the stylesheet for your site by editing /public/styles/site.less
+    //- All .less files will be automatically compiled and minified in production.
+    link(href="/styles/site.min.css", rel="stylesheet")
+
+    //- Angular Material
+    link(href="/js/lib/angular-material/angular-material.min.css", rel="stylesheet")
+    link(href="/js/lib/angular-material/themes/indigo-theme.css", rel="stylesheet")
+    link(href="/js/lib/angular-material/themes/green-theme.css", rel="stylesheet")
+
+    //- Include template-specific stylesheets by extending the css block
+    block css
+
+    //- Add any other template-specific HEAD tags by extending the head block
+    block head
+
+  //- HTML BODY
+  body
+
+    //- BODY
+    #body
+
+      block app
+
+    //- Add scripts that are globally required by your site here.
+    script(src='/js/lib/angular/angular.js')
+    script(src='/js/lib/angular-sanitize/angular-sanitize.js')
+    script(src='/js/lib/angular-route/angular-route.js')
+    script(src='/js/lib/angular-aria/angular-aria.js')
+    script(src='/js/lib/angular-animate/angular-animate.js')
+    script(src='/js/lib/hammerjs/hammer.js')
+    script(src='/js/lib/angular-material/angular-material.js')
+    script(src='/js/lib/angular-resource/angular-resource.js')
+
+    //- Include template-specific javascript files by extending the js block
+    block js

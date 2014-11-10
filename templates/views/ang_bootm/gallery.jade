@@ -1,0 +1,11 @@
+extends ../../layouts/material_init
+
+block angular
+  .container(ng-controller="GalleryCtrl as galleryCtrl")
+    div(ng-repeat="gallery in galleryCtrl.galleries")
+      h2 {{gallery.name}}
+        .pull-right.text-muted {{gallery.publishedDate | date:'longDate'}}
+      .row.gallery-images
+        .col-sm-4.col-md-4.gallery-image: img(ng-src="{{gallery.heroImage.url}}").img-rounded
+        .col-sm-8.col-md-8: .row
+          .col-xs-4.col-sm-4.col-md-3.gallery-image(ng-repeat="image in gallery.images"): img(ng-src="{{image.url}}").img-rounded

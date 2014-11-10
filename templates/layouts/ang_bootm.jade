@@ -1,0 +1,80 @@
+include ../mixins/flash-messages
+
+doctype html
+html(ng-app="mainApp" class="no-js")
+
+  //- HTML HEADER
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+
+    title= title || 'Anuncia Tu Denuncia'
+    link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
+
+    //- Customise the stylesheet for your site by editing /public/styles/site.less
+    //- All .less files will be automatically compiled and minified in production.
+    link(href="/styles/site.min.css", rel="stylesheet")
+
+    //- This file provides the default styling for the KeystoneJS Content Editor
+    if user && user.canAccessKeystone
+      link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
+
+    //- Bootstrap Material
+    //- link(href="/js/lib/bootstrap-material-design/dist/css/material-wfont.min.css", rel="stylesheet")
+    //- link(href="/js/lib/bootstrap-material-design/dist/css/ripples.min.css", rel="stylesheet")
+
+    //- Include template-specific stylesheets by extending the css block
+    block css
+
+    //- Add any other template-specific HEAD tags by extending the head block
+    block head
+
+  //- HTML BODY
+  body
+    //- HEADER
+    #header
+      block nav
+
+    //- BODY
+    #body
+      block intro
+
+      block content
+
+    //- FOOTER
+    .container: #footer
+
+      //- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
+      p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a> and <a href="https://angularjs.org" target="_blank">AngularJS</a>.
+
+    //- JAVASCRIPT
+
+    //- jQuery 1.11.1 is included by default, and required by both Bootstrap
+    //- and the KeystoneJS Content Editor. If you are not targeting IE8,
+    //- you can upgrade to 2.1.1 (also bundled) for better performance.
+    script(src='/js/lib/jquery/jquery-1.11.1.min.js')
+
+    //- Customise which Bootstrap javascript files are served by including
+    //- them specifically here, instead of bootstrap-3.2.0.min.js
+    script(src='/js/lib/bootstrap/bootstrap-3.2.0.min.js')
+
+    //- Bootstrap material
+    //- script(src="/js/lib/bootstrap-material-design/dist/js/ripples.min.js")
+    //- script(src="/js/lib/bootstrap-material-design/dist/js/material.min.js")
+
+    //- The KeystoneJS Content Editor provides support for ks-editable data attributes,
+    //- which generate links to edit content for users who can access Keystone
+    if user && user.canAccessKeystone
+      script(src='/keystone/js/content/editor.js')
+
+    //- Add scripts that are globally required by your site here.
+    script(src='/js/lib/angular/angular.js')
+    script(src='/js/lib/angular-sanitize/angular-sanitize.js')
+    script(src='/js/lib/angular-route/angular-route.js')
+    script(src='/js/lib/angular-aria/angular-aria.js')
+    script(src='/js/lib/angular-animate/angular-animate.js')
+    script(src='/js/lib/angular-resource/angular-resource.js')
+
+    //- Include template-specific javascript files by extending the js block
+    block js

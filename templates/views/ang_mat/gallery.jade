@@ -1,0 +1,12 @@
+doctype html
+div(ng-controller="GalleryCtrl as galleryCtrl" layout="vertical" layout-fill)
+  md-content
+    div(ng-repeat="gallery in galleryCtrl.galleries").gallery-images
+      h1 {{gallery.name}}
+      .gallery-image: img(ng-src="{{gallery.heroImage.url}}").img-rounded
+      md-list
+        md-item(ng-repeat="image in gallery.images")
+          md-item-content
+            div(class="md-tile-content")
+              .gallery-image: img(ng-src="{{image.url}}").img-rounded
+      //- img(ng-repeat="image in gallery.images" ng-src="{{image.url}}" class="art-img")

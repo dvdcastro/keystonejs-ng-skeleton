@@ -1,0 +1,17 @@
+extends ../../layouts/material_init
+
+block angular
+  .container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
+    article(ng-controller="PostCtrl as postctrl")
+      p: a(href="" ng-click="go('/blog')") &larr; Back to the blog
+      hr
+      header
+        h1 {{postctrl.post.title}}
+        h5 Posted on {{postctrl.post.publishedDate | date:'longDate'}} in
+          span(ng-repeat="category in postctrl.post.categories") 
+            a(href="" ng-click="go('/blog/' + category.key)") {{category.name}}
+            | {{$last ? ' ' : ', '}}
+          | by {{postctrl.post.author.name.first}}
+      .post
+        .image-wrap: img(ng-src="{{postctrl.post.image.url}}").img-responsive
+        div(ng-bind-html="postctrl.post.content.extended")

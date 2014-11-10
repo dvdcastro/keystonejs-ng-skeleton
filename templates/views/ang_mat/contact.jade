@@ -1,0 +1,27 @@
+doctype html
+.container(ng-controller="ContactCtrl as contactCtrl")
+  div(class='alert alert-info', ng-repeat='msg in msgs.info') {{msg.text}}
+  div(class='alert alert-success', ng-repeat='msg in msgs.success') {{msg.text}}
+  div(class='alert alert-warning', ng-repeat='msg in msgs.warning') {{msg.text}}
+  div(class='alert alert-danger', ng-repeat='msg in msgs.danger') {{msg.text}}
+  .row: .col-sm-8.col-md-6
+    form(name="contactForm", class="css-form" novalidate)
+      input(type='hidden', name='action', value='contact', ng-model="contact.action")
+      .form-group
+        input(type='text', name='name.full', placeholder="Name", ng-model="contact['name.full']").form-control.floating-label
+      .form-group
+        input(type='email', name='email', placeholder="Email", ng-model="contact.email").form-control.floating-label
+      .form-group
+        input(type='text', name='phone', placeholder='Phone (optional)', ng-model="contact.phone").form-control.floating-label
+      .form-group
+        label What are you contacting us about?
+        select(name='enquiryType', ng-model="contact.enquiryType").form-control
+          option(value='') (select one)
+          each type in enquiryTypes
+            option(value=type.value)= type.label
+      .form-group
+        label Message
+        textarea(name='message', placeholder='Leave us a message...', rows=4, ng-model="contact['message.md']").form-control
+      .form-actions
+        button(ng-click='reset()').btn.btn-primary Reset
+        button(ng-click='send(contact)', ng-disabled='form.$invalid').btn.btn-primary Send

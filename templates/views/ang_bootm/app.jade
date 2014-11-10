@@ -1,0 +1,41 @@
+extends ../../layouts/ang_bootm
+
+block css
+  link(href="/styles/angular/list.css", rel="stylesheet")
+
+block js
+  script(src='/js/ang_bootm/services.js')
+  script(src='/js/ang_bootm/blog/blog.js')
+  script(src='/js/ang_bootm/post/post.js')
+  script(src='/js/ang_bootm/gallery/gallery.js')
+  script(src='/js/ang_bootm/contact/contact.js')
+  script(src='/js/ang_bootm/main.js')
+  //- script(type='text/javascript').
+  //-   $(function() {$.material.init();});
+
+block intro
+  .container
+    p Angular Bootstrap Test
+
+block nav
+  div(ng-controller="MainCtrl as main")
+    .container
+      div(role="navigation").navbar.navbar-default
+        .container-fluid
+          div(class="navbar-header")
+            button(type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse")
+              span(class="icon-bar")
+              span(class="icon-bar")
+              span(class="icon-bar")
+            a(class="navbar-brand" href="/") &larr; Go back to Keystone
+          div(class="navbar-collapse collapse navbar-responsive-collapse")
+            ul(class="nav navbar-nav")
+              li(ng-repeat="tab in tabs", class="{{curr_title == tab.title ? 'active' : null}}")
+                a(href="javascript:void(0)" ng-click="go(tab, '/' + tab.path)") {{tab.title}}
+    .container
+      h1 {{curr_title}}
+
+block content
+  div(ng-view)
+
+    

@@ -1,0 +1,23 @@
+extends ../../layouts/material_init
+
+block angular
+  div(ng-controller="HomeCtrl as blog")
+    .container: .row
+      .col-sm-8.col-md-9
+        .blog
+          .post(ng-repeat="post in blog.posts")
+            h2: a(href="" ng-click="go('/post/'+post.slug)") {{post.title}}
+            p.lead.text-muted Posted
+              | on {{post.publishedDate | date:'longDate'}} in 
+              span(ng-repeat="category in post.categories") 
+                a(href="" ng-click="go('/blog/' + category.key)") {{category.name}}
+                | {{$last ? ' ' : ', '}}
+              | by {{post.author.name.first}}
+            img(ng-src="{{post.image.url}}").img.pull-right.face
+            div(ng-bind-html="post.content.brief")
+            p.read-more: a(href='', ng-click="go('/post/'+post.slug)") Read more...
+      .col-sm-4.col-md-3
+        h2 Categories
+        .list-group(style='margin-top: 70px;')
+          a(ng-repeat="category in blog.categories", ng-click="refreshPosts(category.key)", href='', ng-class="curr_cat == category.key ? 'active' : false").list-group-item {{category.name}}
+            
