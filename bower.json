@@ -1,8 +1,8 @@
 {
-  "name": "complaints",
-  "description": "Complaints App",
+  "name": "ngkeystone",
+  "description": "keystonejs angular skeleton",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "https://github.com/dvdcastro/keystonejs-ng-skeleton",
   "license": "Private",
   "private": true,
   "dependencies": {
