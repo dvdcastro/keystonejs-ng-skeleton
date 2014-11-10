@@ -6,11 +6,17 @@ After cloning you just have to run:
 
     npm install
   
-I'm using bower for installing angular, if it asks anything, select the version you want.
+It uses bower for installing angular. If it asks anything, select the version you want.
+
+Remember to create a ".env" file for the cloudinary and mailchimp stuff. You can create a [KeystoneJS yo generated project](https://github.com/keystonejs/generator-keystone) and copy it form there.
+
+## Material AngularJS
+
+The project makes use of the project [Material Design for AngularJS Apps](https://github.com/angular/material) which comes out of the box.
 
 ## Bootstrap Material
 
-I'm also using a [bootstrap material theme](http://fezvrasta.github.io/bootstrap-material-design/), if you want to see it in action, uncomment the following:
+The project is also using a [bootstrap material theme](http://fezvrasta.github.io/bootstrap-material-design/), if you want to see it in action, uncomment the following:
 
     //- templates/views/ang_bootm/app.jade Lines 13 to 14
     script(type='text/javascript').
@@ -23,3 +29,5 @@ I'm also using a [bootstrap material theme](http://fezvrasta.github.io/bootstrap
     //- templates/layouts/ang_bootm.jade Lines 63 to 64
     script(src="/js/lib/bootstrap-material-design/dist/js/ripples.min.js")
     script(src="/js/lib/bootstrap-material-design/dist/js/material.min.js")
+
+
