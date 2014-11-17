@@ -2,13 +2,54 @@
 
 This project is intended to show how to build [KeystoneJS](http://keystonejs.com) apps that use [AngularJS](https://angularjs.org) as front-end.
 
-After cloning you just have to run:
+## Installation
 
+    git clone https://github.com/dvdcastro/keystonejs-ng-skeleton.git
+    cd keystonejs-ng-skeleton
     npm install
   
 It uses bower for installing angular. If it asks anything, select the version you want.
 
-Remember to create a ".env" file for the cloudinary and mailchimp stuff. You can create a [KeystoneJS yo generated project](https://github.com/keystonejs/generator-keystone) and copy it form there.
+Remember to create a ".env" file for the cloudinary and mailchimp stuff. You can create a [KeystoneJS yo generated project](https://github.com/keystonejs/generator-keystone) and copy it from there. Then just...
+
+    node keystone
+
+## Project Structure
+
+The project's structure is the same as the [KeystoneJS yo generated project](https://github.com/keystonejs/generator-keystone). It has additional routes for API, jade views for the angular partials, and more javascript with the angular app.
+    
+    |--public
+    |  |--js
+    |  |  |--ang_*
+    |  |  |  The angular apps have the 'ang_' prefix, this is where the js is contained.
+    |  |  |  |--blog
+    |  |  |  |  |--blog.js
+    |  |  |  |--contact
+    |  |  |  |  |--contact.js
+    |  |  |  |--gallery
+    |  |  |  |  |--gallery.js
+    |  |  |  |--post
+    |  |  |  |  |--post.js
+    |  |  |  |  The angular modules for each page are under a folder with the same name.
+    |  |  |  |--main.js
+    |  |  |  |  The main angular module for the main view.
+    |  |  |  |--services.js
+    |  |  |  |  The Keystone API services consumed with ngResource
+    |--routes
+    |  |--ang_*
+    |  |  The routes for rendering the partials built with jade.
+    |  |--api
+    |  |  The api for our angular app
+    |  |--index.js
+    |  |  Modified for including the routes for the api and partials.
+    |--templates
+    |  |--layouts
+    |  |  |--ang_*.jade
+    |  |  |  The jade layouts for each angular app
+    |  |--views
+    |  |  |--ang_*
+    |  |  |  The jade partials for each angular module. The main file is called app.jade
+
 
 ## Material AngularJS
 
