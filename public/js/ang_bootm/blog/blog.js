@@ -26,25 +26,27 @@ angular.module('mainApp.blog', ['ngRoute'])
   else
     blog.posts = Post.query();
 
-  blog.categories = [{key:'list', name:'All'}];
+  var curr_cat = {key:'list', name:'All'};
 
-  $scope.curr_cat = 'list';
+  $scope.curr_cat = curr_cat;
+
+  blog.categories = [];
 
   blog.categories = PostCategory.query(function(){
-    blog.categories.unshift({key:'list', name:'All'});
+    blog.categories.unshift(curr_cat);
   });
 
   $scope.go = function ( path ) {
     $location.path( path );
   };
 
-  $scope.refreshPosts = function(the_key) {
+  $scope.refreshPosts = function(the_key, the_name) {
     if (the_key == 'list')
       blog.posts = Post.query();
     else
       blog.posts = PostByCategory.query({key:the_key});
 
-    $scope.curr_cat = the_key;
+    $scope.curr_cat = {key:the_key, name:the_name};
   };
 
 }]);

@@ -2,6 +2,7 @@ extends ../../layouts/material_init
 
 block angular
   .container(ng-controller="GalleryCtrl as galleryCtrl")
+    h3(ng-hide="galleryCtrl.galleries.length > 0").text-muted There are no image galleries yet.
     div(ng-repeat="gallery in galleryCtrl.galleries")
       h2 {{gallery.name}}
         .pull-right.text-muted {{gallery.publishedDate | date:'longDate'}}
