@@ -17,7 +17,7 @@ exports.list = function(req, res) {
     
     Post.model.find().populate('author categories').where('categories').in([category.id]).exec(function(err, items) {
       if (err) return res.apiError('database error', err);
-      if (!items || items.length == 0) return res.apiError('not found');
+      if (!items || items.length === 0) return res.apiError('not found');
 
       res.apiResponse(
         items

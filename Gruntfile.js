@@ -95,6 +95,32 @@ module.exports = function(grunt) {
 					livereload: true
 				}
 			}
+		},
+
+		jade: {
+			mobicompi: {
+		    options: {
+		    	pretty: true,
+		      data: {
+		        debug: false
+		      }
+		    },
+		    files: {
+		      "mobile/www/index.html": ["templates/views/ang_bootm/app.jade"],
+		      "mobile/www/ang_bootm/blog.html": ["templates/views/ang_bootm/blog.jade"],
+		      "mobile/www/ang_bootm/contact.html": ["templates/views/ang_bootm/contact.jade"],
+		      "mobile/www/ang_bootm/gallery.html": ["templates/views/ang_bootm/gallery.jade"],
+		      "mobile/www/ang_bootm/post.html": ["templates/views/ang_bootm/post.jade"],
+		    }
+		  }
+		},
+
+		copy: {
+			mobicopy: {
+				files: [
+					{expand: true, cwd: 'public/', src: ['**'], dest: 'mobile/www/'}
+				]
+			}
 		}
 	});
 

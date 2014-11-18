@@ -35,3 +35,10 @@ public/js/lib/angular*
 public/js/lib/hammerjs
 public/js/lib/bootstrap-material-design
 
+# Ignore mobile stuff
+mobile/platforms
+mobile/plugins
+mobile/hooks
+mobile/www
+
+
