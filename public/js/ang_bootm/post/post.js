@@ -4,7 +4,7 @@ angular.module('mainApp.post', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/post/:slug', {
-    templateUrl: 'ang-bootm/post',
+    templateUrl: 'ang_bootm/post' + template_ext,
     controller: 'PostCtrl'
   });
 }])

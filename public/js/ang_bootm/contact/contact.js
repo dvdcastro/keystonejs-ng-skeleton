@@ -4,12 +4,16 @@ angular.module('mainApp.contact', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/contact', {
-    templateUrl: 'ang-bootm/contact',
+    templateUrl: 'ang_bootm/contact' + template_ext,
     controller: 'ContactCtrl'
   });
 }])
 
-.controller('ContactCtrl', ['$routeParams', 'Enquiry', '$scope', function($routeParams, Enquiry, $scope) {
+.controller('ContactCtrl', ['$routeParams', 'Enquiry', 'EnquiryType', '$scope', function($routeParams, Enquiry, EnquiryType, $scope) {
+  var self = this;
+
+  self.enqTypes = EnquiryType.query();
+
   var reset = function() {
     $scope.contact = {};
     resetMsgs();

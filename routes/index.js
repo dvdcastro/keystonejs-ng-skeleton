@@ -66,6 +66,9 @@ exports = module.exports = function(app) {
 	app.all('/api/enquiry/create', middleware.corsAPI, routes.api.enquiries.create);
 	app.all('/api/enquiry/:id/update', middleware.corsAPI, routes.api.enquiries.update);
 	app.get('/api/enquiry/:id/remove', middleware.corsAPI, routes.api.enquiries.remove);
+
+	app.get('/api/enquiry_type/list', middleware.corsAPI, routes.api.enquiry_types.list);
+	app.get('/api/enquiry_type/:value', middleware.corsAPI, routes.api.enquiry_types.get);
 	
 	// App Routes for Angular Material Project
 	app.get('/ang-mat', routes.ang_mat.app);
@@ -75,10 +78,10 @@ exports = module.exports = function(app) {
 	app.get('/ang-mat/contact', routes.ang_mat.contact);
 
 	// App Routes for Angular Bootstrap Material Project
-	app.get('/ang-bootm', routes.ang_bootm.app);
-	app.get('/ang-bootm/blog', routes.ang_bootm.blog);
-	app.get('/ang-bootm/post', routes.ang_bootm.post);
-	app.get('/ang-bootm/gallery', routes.ang_bootm.gallery);
-	app.get('/ang-bootm/contact', routes.ang_bootm.contact);
+	app.get('/ang_bootm', routes.ang_bootm.app);
+	app.get('/ang_bootm/blog', routes.ang_bootm.blog);
+	app.get('/ang_bootm/post', routes.ang_bootm.post);
+	app.get('/ang_bootm/gallery', routes.ang_bootm.gallery);
+	app.get('/ang_bootm/contact', routes.ang_bootm.contact);
 	
 };

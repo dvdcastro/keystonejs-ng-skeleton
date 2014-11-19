@@ -14,7 +14,7 @@ html(ng-app="mainApp" class="no-js")
 
     //- Customise the stylesheet for your site by editing /public/styles/site.less
     //- All .less files will be automatically compiled and minified in production.
-    link(href="/styles/site.min.css", rel="stylesheet")
+    link(href="styles/site.min.css", rel="stylesheet")
 
     //- This file provides the default styling for the KeystoneJS Content Editor
     if user && user.canAccessKeystone
@@ -53,11 +53,11 @@ html(ng-app="mainApp" class="no-js")
     //- jQuery 1.11.1 is included by default, and required by both Bootstrap
     //- and the KeystoneJS Content Editor. If you are not targeting IE8,
     //- you can upgrade to 2.1.1 (also bundled) for better performance.
-    script(src='/js/lib/jquery/jquery-1.11.1.min.js')
+    script(src='js/lib/jquery/jquery-1.11.1.min.js')
 
     //- Customise which Bootstrap javascript files are served by including
     //- them specifically here, instead of bootstrap-3.2.0.min.js
-    script(src='/js/lib/bootstrap/bootstrap-3.2.0.min.js')
+    script(src='js/lib/bootstrap/bootstrap-3.2.0.min.js')
 
     //- Bootstrap material
     //- script(src="/js/lib/bootstrap-material-design/dist/js/ripples.min.js")
@@ -69,12 +69,12 @@ html(ng-app="mainApp" class="no-js")
       script(src='/keystone/js/content/editor.js')
 
     //- Add scripts that are globally required by your site here.
-    script(src='/js/lib/angular/angular.js')
-    script(src='/js/lib/angular-sanitize/angular-sanitize.js')
-    script(src='/js/lib/angular-route/angular-route.js')
-    script(src='/js/lib/angular-aria/angular-aria.js')
-    script(src='/js/lib/angular-animate/angular-animate.js')
-    script(src='/js/lib/angular-resource/angular-resource.js')
+    script(src='js/lib/angular/angular.js')
+    script(src='js/lib/angular-sanitize/angular-sanitize.js')
+    script(src='js/lib/angular-route/angular-route.js')
+    script(src='js/lib/angular-aria/angular-aria.js')
+    script(src='js/lib/angular-animate/angular-animate.js')
+    script(src='js/lib/angular-resource/angular-resource.js')
 
     //- Include template-specific javascript files by extending the js block
     block js
