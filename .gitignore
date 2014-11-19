@@ -39,6 +39,16 @@ public/js/lib/bootstrap-material-design
 mobile/platforms
 mobile/plugins
 mobile/hooks
-mobile/www
+mobile/www/ang_bootm
+mobile/www/css
+mobile/www/styles
+mobile/www/images
+mobile/www/fonts
+mobile/www/img
+mobile/www/css
+mobile/www/index.html
+mobile/www/favicon.ico
+mobile/www/js/ang_bootm
+mobile/www/js/lib
 
 
