@@ -118,7 +118,11 @@ module.exports = function(grunt) {
 		copy: {
 			mobicopy: {
 				files: [
-					{expand: true, cwd: 'public/', src: ['**'], dest: 'mobile/www/'}
+					{expand: true, cwd: 'public/js/ang_bootm/', src: ['**'], dest: 'mobile/www/js/ang_bootm/'},
+					{expand: true, cwd: 'public/js/lib/', src: ['**'], dest: 'mobile/www/js/lib/'},
+					{expand: true, cwd: 'public/styles/', src: ['**'], dest: 'mobile/www/styles/'},
+					{expand: true, cwd: 'public/fonts/', src: ['**'], dest: 'mobile/www/fonts/'},
+					{expand: true, cwd: 'public/images/', src: ['**'], dest: 'mobile/www/images/'},
 				]
 			}
 		}
@@ -142,6 +146,13 @@ module.exports = function(grunt) {
 	grunt.registerTask('server', function () {
 		grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
 		grunt.task.run(['serve:' + target]);
+	});
+
+	grunt.registerTask('mobilegen', function () {
+		grunt.task.run([
+			'jade',
+			'copy'
+		]);
 	});
 
 };
