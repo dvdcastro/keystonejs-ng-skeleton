@@ -31,7 +31,7 @@ exports.initLocals = function(req, res, next) {
 		{ label: 'Gallery',		key: 'gallery',		href: '/gallery' },
 		{ label: 'Contact',		key: 'contact',		href: '/contact' },
 		{ label: 'Angular Mat',		key: 'and-mat',		href: '/ang-mat' },
-		{ label: 'Angular BootMat',		key: 'and-bootm',		href: '/ang-bootm' }
+		{ label: 'Angular BootMat',		key: 'and_bootm',		href: '/ang_bootm' }
 	];
 	
 	locals.user = req.user;
