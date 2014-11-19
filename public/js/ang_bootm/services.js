@@ -39,3 +39,10 @@ postServices.factory('Enquiry', ['$resource',
       create: {method:'POST', params:{key:'create'}, isArray:false}
     });
   }]);
+
+postServices.factory('EnquiryType', ['$resource',
+  function($resource){
+    return $resource(host + 'api/enquiry_type/:key', {}, {
+      query: {method:'GET', params:{key:'list'}, isArray:true}
+    });
+  }]);
