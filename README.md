@@ -2,6 +2,8 @@
 
 This project is intended to show how to build [KeystoneJS](http://keystonejs.com) apps that use [AngularJS](https://angularjs.org) as front-end.
 
+A mobile app can be generated as well, it is built with [Apache Cordova](http://cordova.apache.org/).
+
 ## Installation
 
     git clone https://github.com/dvdcastro/keystonejs-ng-skeleton.git
@@ -10,9 +12,17 @@ This project is intended to show how to build [KeystoneJS](http://keystonejs.com
   
 It uses bower for installing angular. If it asks anything, select the version you want.
 
-Remember to create a ".env" file for the cloudinary and mailchimp stuff. You can create a [KeystoneJS yo generated project](https://github.com/keystonejs/generator-keystone) and copy it from there. Then just...
+Remember to create a ".env" file for the cloudinary and mailchimp stuff. You can create a [KeystoneJS yo generated project](https://github.com/keystonejs/generator-keystone) and copy it from there.
+
+Also, if you have a different port or specific host settings, please update de host url in the file *public/js/index.js*.
+
+Then just...
 
     node keystone
+
+### My app won't work
+
+If you configure a different port than 3000
 
 ## Project Structure
 
@@ -71,4 +81,23 @@ The project is also using a [bootstrap material theme](http://fezvrasta.github.i
     script(src="/js/lib/bootstrap-material-design/dist/js/ripples.min.js")
     script(src="/js/lib/bootstrap-material-design/dist/js/material.min.js")
 
+## Mobile AngularJS App
 
+You can generate a [cordova](http://cordova.apache.org/) mobile app with the angular app. For doing this, execute the following grunt task:
+
+    grunt mobilegen
+
+This will compile the jade templates and copy your angular app, as specified by the *copy* and *jade* tasks in *Gruntfile.js* into the mobile app folder (/mobile).
+
+After running the task, do the following:
+
+1. You need to configure the file *mobile/index.js* for specifying the host url which will respond to your api requests.
+2. [Install Apache cordova on your system.](http://cordova.apache.org/docs/en/edge/guide_cli_index.md.html)
+3. Add platforms (For the hardware and software you have) and test-run your app!
+
+    cordova platform add android # If you have installed Android Developer Tools https://developer.android.com/sdk/index.html
+    cordova platform add ios # If your on a mac and have XCode installed
+    cordova build android
+    cordova emulate android
+
+If you add more templates and javascript files, make sure to update the grunt tasks *copy* and *jade* in your *Gruntfile.js* file.
