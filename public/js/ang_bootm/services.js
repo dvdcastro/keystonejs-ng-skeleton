@@ -2,8 +2,6 @@
 
 var postServices = angular.module('postServices', ['ngResource']);
 
-var host = 'http://192.168.0.15:3000/';
-
 postServices.factory('Post', ['$resource',
   function($resource){
     return $resource(host + 'api/post/:slug', {}, {
