@@ -95,6 +95,7 @@ After running the task, do the following:
 2. [Install Apache cordova on your system.](http://cordova.apache.org/docs/en/edge/guide_cli_index.md.html)
 3. Add platforms (For the hardware and software you have) and test-run your app!
 
+        cd mobile
         cordova platform add android # If you have installed Android Developer Tools https://developer.android.com/sdk/index.html
         cordova platform add ios # If your on a mac and have XCode installed
         cordova build android
