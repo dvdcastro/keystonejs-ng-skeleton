@@ -50,4 +50,7 @@ var app = {
 
 app.initialize();
 
+
+// App Specific configuration
 var template_ext = '.html';
+var host = 'http://localhost:3000/'; // This host will respond with your API requests
