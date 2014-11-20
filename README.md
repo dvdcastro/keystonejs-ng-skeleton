@@ -20,10 +20,6 @@ Then just...
 
     node keystone
 
-### My app won't work
-
-If you configure a different port than 3000
-
 ## Project Structure
 
 The project's structure is the same as the [KeystoneJS yo generated project](https://github.com/keystonejs/generator-keystone). It has additional routes for API, jade views for the angular partials, and more javascript with the angular app.
@@ -87,7 +83,7 @@ You can generate a [cordova](http://cordova.apache.org/) mobile app with the ang
 
     grunt mobilegen
 
-This will compile the jade templates and copy your angular app, as specified by the *copy* and *jade* tasks in *Gruntfile.js* into the mobile app folder (/mobile).
+This will compile the jade templates and copy your angular app, as specified by the *clean*, *copy* and *jade* tasks in *Gruntfile.js* into the mobile app folder (/mobile).
 
 After running the task, do the following:
 
@@ -101,4 +97,10 @@ After running the task, do the following:
         cordova build android
         cordova emulate android
 
-If you add more templates and javascript files, make sure to update the grunt tasks *copy* and *jade* in your *Gruntfile.js* file.
+### My app won't work
+
+If you configure a different port than 3000 in your *.env* or anyother place, remember to update *public/js/index.js* and *mobile/www/index.js*
+
+### Extending and adding functionality
+
+If you add more templates and javascript files, make sure to update the grunt tasks *clean*, *copy* and *jade* in your *Gruntfile.js* file.
