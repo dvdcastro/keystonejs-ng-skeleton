@@ -125,6 +125,17 @@ module.exports = function(grunt) {
 					{expand: true, cwd: 'public/images/', src: ['**'], dest: 'mobile/www/images/'},
 				]
 			}
+		},
+
+		clean: {
+			mobiclean: [
+				'mobile/www/index.html',
+				'mobile/www/js/ang_bootm',
+				'mobile/www/js/lib',
+				'mobile/www/styles',
+				'mobile/www/fonts',
+				'mobile/www/images'
+			]
 		}
 	});
 
@@ -150,8 +161,9 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('mobilegen', function () {
 		grunt.task.run([
-			'jade',
-			'copy'
+			'clean:mobiclean',
+			'jade:mobicompi',
+			'copy:mobicopy'
 		]);
 	});
 
