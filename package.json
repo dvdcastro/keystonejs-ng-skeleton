@@ -8,7 +8,7 @@
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-copy": "^0.7.0",
     "grunt-contrib-jade": "^0.13.0",
-    "keystone": "~0.2.38",
+    "keystone": "0.2.42",
     "underscore": "~1.7.0"
   },
   "devDependencies": {
