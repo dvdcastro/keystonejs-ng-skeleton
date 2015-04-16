@@ -30,6 +30,9 @@ node_modules
 # Ignore .DS_Store files on OS X
 .DS_Store
 
+# Ignore generated styles
+public/styles/site.min.css
+
 # Ignore angular libraries
 public/js/lib/angular*
 public/js/lib/hammerjs

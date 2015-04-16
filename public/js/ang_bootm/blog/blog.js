@@ -7,9 +7,9 @@ angular.module('mainApp.blog', ['ngRoute'])
     templateUrl: 'ang_bootm/blog' + template_ext,
     controller: 'HomeCtrl',
     reloadOnSearch: false
-  });
+  })
 
-  $routeProvider.when('/blog', {
+  .when('/blog', {
     templateUrl: 'ang_bootm/blog' + template_ext,
     controller: 'HomeCtrl',
     reloadOnSearch: false
