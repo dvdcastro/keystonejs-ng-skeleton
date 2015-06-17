@@ -1,6 +1,6 @@
 # KeystoneJS + AngularJS Skeleton
 
-This project is intended to show how to build [KeystoneJS](http://keystonejs.com) apps that use [AngularJS](https://angularjs.org) as front-end.
+This project shows how to build [KeystoneJS](https://github.com/keystonejs/keystone) apps that use [AngularJS](https://angularjs.org) as front-end.
 
 A mobile app can be generated as well, it is built with [Apache Cordova](http://cordova.apache.org/).
 
@@ -14,7 +14,7 @@ It uses bower for installing angular. If it asks anything, select the version yo
 
 Remember to create a ".env" file for the cloudinary and mailchimp stuff. You can create a [KeystoneJS yo generated project](https://github.com/keystonejs/generator-keystone) and copy it from there.
 
-Also, if you have a different port or specific host settings, please update de host url in the file *public/js/index.js*.
+Also, if you have a different port or specific host settings, please update the host url in the file *public/js/index.js*.
 
 Then just...
 
