@@ -1,6 +1,6 @@
 // Simulate config options from your production environment by
 // customising the .env file in your project's root folder.
-require('dotenv').load();
+// require('dotenv').load();
 
 // Require keystone
 var keystone = require('keystone');
@@ -13,18 +13,21 @@ keystone.init({
 
 	'name': 'Keystone Angular Skeleton',
 	'brand': 'Keystone Angular Skeleton',
-	
+
 	'less': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
 	'views': 'templates/views',
 	'view engine': 'jade',
-	
+
 	'auto update': true,
 	'session': true,
 	'auth': true,
 	'user model': 'User',
-	'cookie secret': '2|@"v4%q-V8F|3PLcHJgOa%0@W!"Rc]6r]#@K{C#G;p:xs@C/"@"4RI<]!c0=97w'
+	'cookie secret': '2|@"v4%q-V8F|3PLcHJgOa%0@W!"Rc]6r]#@K{C#G;p:xs@C/"@"4RI<]!c0=97w',
+
+	'mongo': process.env.MONGO_URI || process.env.MONGOLAB_URI || 'mongodb://localhost/keystone-angular-skeleton',
+	'cloudinary config': process.env.CLOUDINARY_URL || 'cloudinary://333779167276662:_8jbSi9FB3sWYrfimcl8VKh34rI@keystone-demo'
 
 });
 
@@ -37,7 +40,7 @@ keystone.import('models');
 // for each request) should be added to ./routes/middleware.js
 
 keystone.set('locals', {
-	_: require('underscore'),
+	_: require('lodash'),
 	env: keystone.get('env'),
 	utils: keystone.utils,
 	editable: keystone.content.editable
